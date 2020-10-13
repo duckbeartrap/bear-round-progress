@@ -1,24 +1,61 @@
-# BearRoundProgress
+# Round Progress Bar component for angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+No additional dependencies are required for this component.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project bear-round-progress` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project bear-round-progress`.
-> Note: Don't forget to add `--project bear-round-progress` or else it will be added to the default project in your `angular.json` file. 
+### Install the package
 
-## Build
+```npm
 
-Run `ng build bear-round-progress` to build the project. The build artifacts will be stored in the `dist/` directory.
+npm install bear-round-progress --save
+
+```
+
+### Import BearRoundProgressModule module in your module:
+```ts
+
+import { BearRoundProgressModule } from 'bear-round-progress';
+
+@NgModule({
+	imports: [
+		BearRoundProgressModule
+	]
+})
+
+```
+
+### Use
+
+```html
+
+<br-bear-round-progress></br-bear-round-progress>
+
+```
+
+### Available configurations
+
+```ts
+
+// This are the default configurations of the component. You can make your own config object with following parameters and pass them as input.
+const config = {
+    currentNumber: 60, // Current number out of total number
+    maxNumber: 100, // Total number which represents the maximum of the bar
+    radius: 100, // Radius of the circle
+    gradientStart: '#833ab4', // Gradient start color
+    gradientEnd: '#fcb045' // Gradient end color
+}
+
+```
+
+```html
+
+<br-bear-round-progress [config]="config"></br-bear-round-progress>
+
+```
+
+
 
 ## Publishing
 
 After building your library with `ng build bear-round-progress`, go to the dist folder `cd dist/bear-round-progress` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test bear-round-progress` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
