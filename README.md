@@ -2,6 +2,10 @@
 
 No additional dependencies are required for this component.
 
+## DEMO
+
+[Demo](https://angular-ivy-k83qgg.stackblitz.io)
+
 ## Installation
 
 ### Install the package
