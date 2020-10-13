@@ -53,9 +53,3 @@ const config = {
 <br-bear-round-progress [config]="config"></br-bear-round-progress>
 
 ```
-
-
-
-## Publishing
-
-After building your library with `ng build bear-round-progress`, go to the dist folder `cd dist/bear-round-progress` and run `npm publish`.
