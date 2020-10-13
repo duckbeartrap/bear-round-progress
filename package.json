@@ -11,6 +11,14 @@
     "round chart",
     "chart"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duckbeartrap/bear-round-progress"
+  },
+  "author": {
+    "name": "Villi Darbiniani",
+    "email": "villi.darbiniani@gmail.com"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.7",
     "@angular/core": "^9.0.7",
