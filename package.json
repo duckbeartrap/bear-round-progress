@@ -1,0 +1,19 @@
+{
+  "name": "bear-round-progress",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "typescript",
+    "progress",
+    "progress bar",
+    "round progress",
+    "round chart",
+    "chart"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "tslib": "^1.10.0"
+  }
+}

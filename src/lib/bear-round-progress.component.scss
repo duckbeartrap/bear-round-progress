@@ -1,0 +1,27 @@
+.br{
+    &-progress{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-90deg);
+        svg{
+            circle{
+                fill: none;
+                stroke-width: 10;
+                transform: scale(0.9) translate(5.5%, 5.5%);
+                transition: 0.5s;
+                &:first-child{
+                    stroke-dashoffset: 0;
+                    stroke: #D9E2E9;
+                    stroke-width: 10;
+                }
+                &:last-child{
+                    stroke-linecap: round;
+                }
+            }
+        }
+    }
+}
