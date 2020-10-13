@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { IConfig } from './bear-round-progress.interface';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { BearRoundProgressService } from './bear-round-progress.service';
 
 @Component({
@@ -10,8 +9,12 @@ import { BearRoundProgressService } from './bear-round-progress.service';
 })
 export class BearRoundProgressComponent implements OnInit {
 
-  @Input() config: IConfig = this.roundProgressService.getDefaultConfig();
-  
+  @Input() currentNumber: number = 60;
+  @Input() maxNumber: number = 100;
+  @Input() radius: number = 100;
+  @Input() gradientStart: string = '#833ab4';
+  @Input() gradientEnd: string = '#fcb045';
+
   progressPercentage: number = 100;
   offset: any = {
     total: 0,
@@ -21,12 +24,20 @@ export class BearRoundProgressComponent implements OnInit {
   constructor(private roundProgressService: BearRoundProgressService) { }
 
   ngOnInit(): void {
-    this.progressPercentage = this.roundProgressService.getPercentage(this.config.currentNumber, this.config.maxNumber);
-    this.offset = this.roundProgressService.getOffset(this.progressPercentage, this.config.radius);
+    this.calculateProgress();
     this.offset.current = this.offset.total;
   }
 
+  ngOnChanges(): void {
+    this.calculateProgress();
+  }
+
   ngAfterViewInit(): void {
-    setTimeout(()=> this.offset = this.roundProgressService.getOffset(this.progressPercentage, this.config.radius), 500);
+    setTimeout(()=> this.offset = this.roundProgressService.getOffset(this.progressPercentage, this.radius), 500);
+  }
+
+  calculateProgress(){
+    this.progressPercentage = this.roundProgressService.getPercentage(this.currentNumber, this.maxNumber);
+    this.offset = this.roundProgressService.getOffset(this.progressPercentage, this.radius);
   }
 }

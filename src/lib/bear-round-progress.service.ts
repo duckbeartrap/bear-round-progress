@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { IConfig } from './bear-round-progress.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +19,5 @@ export class BearRoundProgressService {
       total: totalOffset,
       current: currentOffset
     }
-  }
-
-  getDefaultConfig(){
-    const defaultConfig = {
-      currentNumber: 60,
-      maxNumber: 100,
-      radius: 100,
-      gradientStart: '#833ab4',
-      gradientEnd: '#fcb045'
-    }
-    return defaultConfig;
   }
 }

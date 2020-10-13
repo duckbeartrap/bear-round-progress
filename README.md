@@ -50,6 +50,11 @@ const config = {
 
 ```html
 
-<br-bear-round-progress [config]="config"></br-bear-round-progress>
+<br-bear-round-progress 
+    [currentNumber]="config.currentNumber" 
+    [maxNumber]="config.maxNumber" 
+    [radius]="config.radius" 
+    [gradientStart]="config.gradientStart" 
+    [gradientEnd]="config.gradientEnd"></br-bear-round-progress>
 
 ```
