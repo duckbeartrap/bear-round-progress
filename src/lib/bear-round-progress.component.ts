@@ -14,6 +14,9 @@ export class BearRoundProgressComponent implements OnInit {
   @Input() radius: number = 100;
   @Input() gradientStart: string = '#833ab4';
   @Input() gradientEnd: string = '#fcb045';
+  @Input() strokeWidth: number = 10;
+  @Input() lineCap: string = 'round';
+  @Input() backgroundColor: string = '#D9E2E9';
 
   progressPercentage: number = 100;
   offset: any = {

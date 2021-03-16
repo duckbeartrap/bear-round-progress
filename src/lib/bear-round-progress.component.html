@@ -1,6 +1,9 @@
 <div class="br-progress">
-  <svg [attr.width]="2*radius + 20 + 'px'" [attr.height]="2*radius + 20 + 'px'">
-    <circle stroke="#000000" cx="50%" cy="50%" [attr.r]="radius + 'px'"></circle>
+  <svg [attr.width]="2*radius + strokeWidth + 'px'" [attr.height]="2*radius + strokeWidth + 'px'">
+    <circle stroke="#000000" cx="50%" cy="50%" [attr.r]="radius + 'px'" [ngStyle]="{
+      'stroke': backgroundColor,
+      'stroke-width': strokeWidth + 'px'
+    }"></circle>
     <defs>
       <linearGradient id="{{'gradient' + radius}}" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" [attr.stop-color]="gradientStart" />
@@ -8,6 +11,9 @@
       </linearGradient>
     </defs>
     <circle [attr.stroke-dasharray]="offset.total" [attr.stroke-dashoffset]="offset.current"
-      attr.stroke="{{'url(' + '#gradient' + radius + ')'}}" cx="50%" cy="50%" [attr.r]="radius + 'px'"></circle>
+      attr.stroke="{{'url(' + '#gradient' + radius + ')'}}" cx="50%" cy="50%" [attr.r]="radius + 'px'" [ngStyle]="{
+        'stroke-width': strokeWidth + 'px',
+        'stroke-linecap': lineCap
+      }"></circle>
   </svg>
 </div>
