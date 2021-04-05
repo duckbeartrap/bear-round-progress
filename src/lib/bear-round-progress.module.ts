@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BearRoundProgressComponent } from './bear-round-progress.component';
 import { CommonModule } from '@angular/common';
-
+import { BearRoundProgressService } from './bear-round-progress.service';
 
 
 @NgModule({
@@ -9,6 +9,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  exports: [BearRoundProgressComponent]
+  exports: [BearRoundProgressComponent],
+  providers: [
+    BearRoundProgressService
+  ]
 })
 export class BearRoundProgressModule { }
